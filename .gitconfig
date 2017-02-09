@@ -1,0 +1,21 @@
+[core]
+	excludesfile = /Users/Matic/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
+	path = 
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
+	trustExitCode = true
+[user]
+	name = Matic Lesjak
+	email = matic.lesjak@gmail.com
+	signingkey = 575C8BF8
+[push]
+	default = current
+[alias]
+	up = "!git remote update -p; git merge --ff-only @{u}"
+	s = "checkout stable"
+        rbs = "pull --no-commit --rebase origin stable"
+        rbm = "pull --no-commit --rebase origin master"
+[commit]
+	gpgsign = true
