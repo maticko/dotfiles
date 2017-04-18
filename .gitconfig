@@ -1,11 +1,5 @@
 [core]
-	excludesfile = /Users/Matic/.gitignore_global
-[difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
-	path = 
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
-	trustExitCode = true
+	excludesfile = /Users/maticko/.gitignore_global
 [user]
 	name = Matic Lesjak
 	email = matic.lesjak@gmail.com
@@ -18,4 +12,4 @@
         rbs = "pull --no-commit --rebase origin stable"
         rbm = "pull --no-commit --rebase origin master"
 [commit]
-	gpgsign = true
+#	gpgsign = true

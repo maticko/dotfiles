@@ -45,14 +45,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z common-aliases git-extras npm nvm osx docker docker-compose node terraform sublime web-search)
+plugins=(git zsh-nvm z common-aliases git-extras npm osx docker docker-compose node terraform sublime web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export JAVA_HOME=`/usr/libexec/java_home`
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -79,14 +78,18 @@ export JAVA_HOME=`/usr/libexec/java_home`
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias knode=" kill $(ps aux | grep 'node' | awk '{print $2}')"
+. /usr/local/etc/profile.d/z.sh
 
-# adding nvm path
-echo "source $(brew --prefix nvm)/nvm.sh" >> ~/.profile
-source /usr/local/opt/nvm/nvm.sh
+# Zaw path
+source "/Users/${USER}/.tools/zaw/zaw.zsh"
 
-# adding zaw path
-source /Users/Matic/tools/zaw/zaw.zsh
+export PATH=$PATH:/Users/maticko/bin
 
-# adding ec2-find to path
-PATH=$PATH:$HOME/dev/findly/ec2-find
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+
+
