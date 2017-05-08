@@ -37,6 +37,10 @@ brew install google-chrome \
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# install zsh-nvm plugin to manage nvm
+# to make this work, you must add 'zsh-nvm' to plugins in .zshrc
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+
 # clone my dot settings from github
 git clone https://github.com/maticko/dotfiles.git
 
