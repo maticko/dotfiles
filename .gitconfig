@@ -3,7 +3,7 @@
 [user]
 	name = Matic Lesjak
 	email = matic.lesjak@gmail.com
-	signingkey = 575C8BF8
+	signingkey = 89901FF1
 [push]
 	default = current
 [alias]
@@ -12,4 +12,4 @@
         rbs = "pull --no-commit --rebase origin stable"
         rbm = "pull --no-commit --rebase origin master"
 [commit]
-#	gpgsign = true
+	gpgsign = true

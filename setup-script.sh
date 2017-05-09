@@ -65,7 +65,8 @@ ln -sf "/Users/${USER}/dotfiles/.gitignore_global" "/Users/${USER}/.gitignore_gl
 # install azure cli tools
 curl -L https://aka.ms/InstallAzureCli | bash
 
-## TODO: Install gpg signatures
 # install GPG signing for git
-#brew install gnupg gpg-agent pinentry-mac
-#echo "install keybase app from web :/"
+brew install gnupg gpg-agent pinentry-mac
+
+# setup GPG signing for git from here:
+open https://github.com/pstadler/keybase-gpg-github
