@@ -41,6 +41,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # to make this work, you must add 'zsh-nvm' to plugins in .zshrc
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
+# install autosuggestion zsh plugin
+# add zsh-autosuggestions to plugins in .zshrc
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
 # clone my dot settings from github
 git clone https://github.com/maticko/dotfiles.git
 
