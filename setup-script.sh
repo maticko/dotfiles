@@ -11,11 +11,11 @@ echo "Installing homebrew cask"
 brew tap caskroom/cask
 
 # installing few basics
-brew install zsh zsh-completions wget shellcheck kubectl awscli emacs-plus z sshuttle watch
+brew install zsh zsh-completions wget shellcheck kubectl awscli emacs-plus z sshuttle watch zsh-syntax-highlighting
 brew linkapps emacs-plus
 
 # installing all programs that I need
-brew install google-chrome \
+brew cask install google-chrome \
   iterm2 \
   docker \
   1password \
