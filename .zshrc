@@ -85,6 +85,9 @@ source "/Users/${USER}/.tools/zaw/zaw.zsh"
 
 export PATH=$PATH:/Users/maticko/bin
 
+autoload -U bashcompinit && bashcompinit
+source '/Users/maticko/lib/azure-cli/az.completion'
+
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
     source ~/.gnupg/.gpg-agent-info
     export GPG_AGENT_INFO
