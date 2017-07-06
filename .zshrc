@@ -87,6 +87,7 @@ export PATH=$PATH:/Users/maticko/bin
 
 autoload -U bashcompinit && bashcompinit
 source '/Users/maticko/lib/azure-cli/az.completion'
+source <(kubectl completion zsh)
 
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
     source ~/.gnupg/.gpg-agent-info
