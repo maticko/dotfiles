@@ -32,7 +32,8 @@ brew cask install google-chrome \
   amazon-drive \
   time-lapse-assembler \
   keybase \
-  grammarly
+  grammarly \
+  kindle
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
