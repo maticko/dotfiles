@@ -100,3 +100,6 @@ fi
 
 # add syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Adding alias e to run emacsclient commant that opens file in already running emacs
+alias e=emacsclient
