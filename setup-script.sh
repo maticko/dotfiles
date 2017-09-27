@@ -34,7 +34,8 @@ brew cask install google-chrome \
   keybase \
   grammarly \
   kindle \
-  linkliar
+  linkliar \
+  jaxx
 
 # Setup Iterm2 config loading
 # Specify the preferences directory
