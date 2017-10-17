@@ -12,8 +12,12 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>B2C60898-9F70-4E28-87C0-51D9005CC6A0</string>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSFontPanelAttributes</key>
@@ -53,12 +57,16 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>1103 966 400 129 0 0 2560 1418 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>993 769 620 392 0 0 2560 1418 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>148 315 606 456 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1234 739 796 473 0 0 2560 1418 </string>
+	<string>1234 710 1016 502 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>44 62 1235 966 0 0 1680 1028 </string>
+	<string>240 83 1213 900 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>152 50 1578 792 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -708,6 +716,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>~/dotfiles/iterm2</string>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -717,7 +727,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-08-29T01:05:19Z</date>
+	<date>2017-10-08T20:08:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -729,6 +739,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.0.15</string>
+	<string>3.1.2</string>
 </dict>
 </plist>
