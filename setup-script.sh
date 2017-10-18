@@ -9,6 +9,7 @@ echo "Installing homebrew, might take some time"
 
 echo "Installing homebrew cask"
 brew tap caskroom/cask
+brew tap d12frosted/emacs-plus
 
 # installing few basics
 brew install zsh zsh-completions wget shellcheck kubectl awscli emacs-plus z sshuttle watch zsh-syntax-highlighting tree
@@ -78,6 +79,9 @@ ln -sf "/Users/${USER}/dotfiles/.spacemacs" "/Users/${USER}/.spacemacs"
 # link global git settings and gitignore
 ln -sf "/Users/${USER}/dotfiles/.gitconfig" "/Users/${USER}/.gitconfig"
 ln -sf "/Users/${USER}/dotfiles/.gitignore_global" "/Users/${USER}/.gitignore_global"
+
+ln -sf "/Users/${USER}/dotfiles/gpg.conf" "/Users/${USER}/.gnupg/gpg.conf"
+ln -sf "/Users/${USER}/dotfiles/gpg-agent.conf" "/Users/${USER}/.gnupg/gpg-agent.conf"
 
 # install azure cli tools
 curl -L https://aka.ms/InstallAzureCli | bash
