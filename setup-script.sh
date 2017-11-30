@@ -12,7 +12,7 @@ brew tap caskroom/cask
 brew tap d12frosted/emacs-plus
 
 # installing few basics
-brew install zsh zsh-completions wget shellcheck kubectl awscli emacs-plus z sshuttle watch zsh-syntax-highlighting tree
+brew install zsh zsh-completions wget shellcheck kubectl awscli emacs-plus z sshuttle watch zsh-syntax-highlighting tree tldr
 brew linkapps emacs-plus
 
 # installing all programs that I need
