@@ -108,8 +108,8 @@ alias kdev='kubectl config set current-context centrality-dev-master'
 alias kuat='kubectl config set current-context centrality-uat-master'
 alias kprod='kubectl config set current-context centrality-prod-master'
 
-alias devproxykube='kdev && kubectl proxy -p 8000'
-alias uatproxykube='kuat && kubectl proxy -p 8880'
-alias prodproxykube='kprod && kubectl proxy -p 8888'
+alias devproxykube='kdev && (kubectl proxy -p 8000 &)'
+alias uatproxykube='kuat && (kubectl proxy -p 8880 &)'
+alias prodproxykube='kprod && (kubectl proxy -p 8888 &)'
 
-alias kubeproxy='devproxykube & uatproxykube & prodproxykube &'
+alias kubeproxy='devproxykube && uatproxykube && prodproxykube'
