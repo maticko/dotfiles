@@ -51,6 +51,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -86,7 +89,6 @@ source "/Users/${USER}/.tools/zaw/zaw.zsh"
 export PATH=$PATH:/Users/maticko/bin
 
 autoload -U bashcompinit && bashcompinit
-source '/Users/maticko/lib/azure-cli/az.completion'
 source <(kubectl completion zsh)
 
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
