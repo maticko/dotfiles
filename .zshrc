@@ -89,6 +89,7 @@ source "/Users/${USER}/.tools/zaw/zaw.zsh"
 export PATH=$PATH:/Users/maticko/bin
 
 autoload -U bashcompinit && bashcompinit
+source /usr/local/etc/bash_completion.d/az
 source <(kubectl completion zsh)
 
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
@@ -115,3 +116,4 @@ alias uatproxykube='kuat && (kubectl proxy -p 8880 &)'
 alias prodproxykube='kprod && (kubectl proxy -p 8888 &)'
 
 alias kubeproxy='devproxykube && uatproxykube && prodproxykube'
+alias k=kubectl
