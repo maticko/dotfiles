@@ -106,14 +106,27 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Adding alias e to run emacsclient commant that opens file in already running emacs
 alias e=emacsclient
+alias k=kubectl
 
+# settinge env proxy settings
 alias kdev='kubectl config set current-context centrality-dev-master'
+alias kd='kubectl config set current-context dev'
+
 alias kuat='kubectl config set current-context centrality-uat-master'
+alias ku='kubectl config set current-context uat'
+
 alias kprod='kubectl config set current-context centrality-prod-master'
+alias kp='kubectl config set current-context prod'
 
 alias devproxykube='kdev && (kubectl proxy -p 8000 &)'
-alias uatproxykube='kuat && (kubectl proxy -p 8880 &)'
-alias prodproxykube='kprod && (kubectl proxy -p 8888 &)'
+alias dproxykube='kd && (kubectl proxy -p 9000 &)'
 
-alias kubeproxy='devproxykube && uatproxykube && prodproxykube'
-alias k=kubectl
+alias uatproxykube='kuat && (kubectl proxy -p 8880 &)'
+alias uproxykube='ku && (kubectl proxy -p 9990 &)'
+
+alias prodproxykube='kprod && (kubectl proxy -p 8888 &)'
+alias pproxykube='kp && (kubectl proxy -p 9999 &)'
+
+alias kubeproxy='devproxykube && dproxykube && \
+       uatproxykube && uproxykube && \
+       prodproxykube && pproxykube'
