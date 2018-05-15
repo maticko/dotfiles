@@ -44,7 +44,7 @@ values."
      ;; ----------------------------------------------------------------
      helm
      auto-completion
-     evil-nerd-commenter
+     ;; evil-nerd-commenter
      better-defaults
      emacs-lisp
      git
@@ -330,6 +330,18 @@ you should place your code here."
    web-mode-attr-indent-offset 2)
 
   (setq flycheck-checkers '(javascript-eslint))
+
+  ;; custom keybindings
+  (use-package helm-projectile
+    :bind (:map projectile-mode-map
+                ("C-c p s s" . helm-projectile-ag)))
+
+  ;; (define-key global-map (kbd "C-c h") 'helm-command-prefix)
+  (use-package helm
+    :defer t))
+    :bind (("C-c h o" . helm-occur)
+           ("C-c h l" . helm-resume)))
+
 
   ;; use eslint with web-mode for jsx files
   ;;(flycheck-add-mode 'javascript-eslint 'web-mode)
