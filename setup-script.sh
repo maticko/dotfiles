@@ -87,7 +87,7 @@ ln -sf "/Users/${USER}/dotfiles/gpg-agent.conf" "/Users/${USER}/.gnupg/gpg-agent
 curl -L https://aka.ms/InstallAzureCli | bash
 
 # install GPG signing for git
-brew install gnupg gpg-agent pinentry-mac
+brew install gnupg pinentry-mac
 
 # setup GPG signing for git from here:
 open https://github.com/pstadler/keybase-gpg-github
