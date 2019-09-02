@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-nvm z common-aliases git-extras npm osx docker docker-compose node terraform sublime web-search zsh-autosuggestions)
+plugins=(git zsh-nvm z common-aliases git-extras npm osx docker docker-compose node terraform sublime web-search zsh-autosuggestions kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,13 +107,15 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Adding alias e to run emacsclient commant that opens file in already running emacs
 alias e=emacsclient
 alias k=kubectl
+alias kctx=kubectx
+alias kns=kubens
 
 # settinge env proxy settings
 alias kdev='kubectl config set current-context centrality-dev-master'
 alias kd='kubectl config set current-context dev'
 
 alias kuat='kubectl config set current-context centrality-uat-master'
-alias ku='kubectl config set current-context uat'
+alias ku='kubectl config set current-context k8s-uat'
 
 alias kprod='kubectl config set current-context centrality-prod-master'
 alias kp='kubectl config set current-context prod'
@@ -130,3 +132,16 @@ alias pproxykube='kp && (kubectl proxy -p 9999 &)'
 alias kubeproxy='devproxykube && dproxykube && \
        uatproxykube && uproxykube && \
        prodproxykube && pproxykube'
+
+USER_BASE_PATH=$(python -m site --user-base)
+export PATH=$PATH:$USER_BASE_PATH/bin
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+  PS1='$(kube_ps1)'$PS1
+

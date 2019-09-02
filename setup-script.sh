@@ -10,13 +10,15 @@ echo "Installing homebrew, might take some time"
 echo "Installing homebrew cask"
 brew tap caskroom/cask
 brew tap d12frosted/emacs-plus
+brew tap johanhaleby/kubetail
 
 # installing few basics
-brew install zsh zsh-completions wget shellcheck kubectl awscli emacs-plus z sshuttle watch zsh-syntax-highlighting tree tldr
+brew install zsh zsh-completions wget shellcheck kubectl awscli emacs-plus z sshuttle watch zsh-syntax-highlighting tree tldr kubetail kubectx kubens derailed/k9s/k9s kube-ps1 derailed/popeye/popeye stern
 brew linkapps emacs-plus
 
 # installing all programs that I need
 brew cask install google-chrome \
+  firefox \
   iterm2 \
   docker \
   1password \
@@ -36,7 +38,9 @@ brew cask install google-chrome \
   grammarly \
   kindle \
   linkliar \
-  jaxx
+  jaxx \
+  drawio \
+  hub 
 
 # Setup Iterm2 config loading
 # Specify the preferences directory
