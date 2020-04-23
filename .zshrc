@@ -84,54 +84,19 @@ export LANG=en_US.UTF-8
 . /usr/local/etc/profile.d/z.sh
 
 # Zaw path
-source "/Users/${USER}/.tools/zaw/zaw.zsh"
-
-export PATH=$PATH:/Users/maticko/bin
+source "/users/${USER}/.tools/zaw/zaw.zsh"
 
 autoload -U bashcompinit && bashcompinit
 source /usr/local/etc/bash_completion.d/az
 source <(kubectl completion zsh)
 
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-    GPG_TTY=$(tty)
-    export GPG_TTY
-else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
-
 # add syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Adding alias e to run emacsclient commant that opens file in already running emacs
-alias e=emacsclient
 alias k=kubectl
 alias kctx=kubectx
 alias kns=kubens
-
-# settinge env proxy settings
-alias kdev='kubectl config set current-context centrality-dev-master'
-alias kd='kubectl config set current-context dev'
-
-alias kuat='kubectl config set current-context centrality-uat-master'
-alias ku='kubectl config set current-context k8s-uat'
-
-alias kprod='kubectl config set current-context centrality-prod-master'
-alias kp='kubectl config set current-context prod'
-
-alias devproxykube='kdev && (kubectl proxy -p 8000 &)'
-alias dproxykube='kd && (kubectl proxy -p 9000 &)'
-
-alias uatproxykube='kuat && (kubectl proxy -p 8880 &)'
-alias uproxykube='ku && (kubectl proxy -p 9990 &)'
-
-alias prodproxykube='kprod && (kubectl proxy -p 8888 &)'
-alias pproxykube='kp && (kubectl proxy -p 9999 &)'
-
-alias kubeproxy='devproxykube && dproxykube && \
-       uatproxykube && uproxykube && \
-       prodproxykube && pproxykube'
 
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$USER_BASE_PATH/bin
@@ -145,3 +110,21 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
   PS1='$(kube_ps1)'$PS1
 
+# exa
+alias ls='exa'
+alias ll='exa --long --git'
+alias lt='exa --long --git --tree --level=2'
+
+# Tools
+# To bypass alias run: `\cat or `command cat`
+alias cat='bat'
+alias ping='prettyping --nolegend'
+alias preview='fzf --preview 'bat --color \"always\" {}''
+alias top='sudo htop' # alias top and fix high sierra bug
+alias help='tldr'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+GPG_TTY=$(tty)
+export GPG_TTY
