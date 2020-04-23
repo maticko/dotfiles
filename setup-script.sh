@@ -51,7 +51,8 @@ brew install \
   hub \
   repo \
   htop \
-  prettyping
+  prettyping \
+  the_silver_searcher
 
 
 
