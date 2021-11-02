@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-nvm z common-aliases git-extras npm osx docker docker-compose node terraform sublime web-search zsh-autosuggestions kubectl)
+plugins=(git zsh-nvm z common-aliases git-extras osx docker docker-compose node zsh-autosuggestions kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,14 +86,13 @@ export LANG=en_US.UTF-8
 # Zaw path
 source "/users/${USER}/.tools/zaw/zaw.zsh"
 
-autoload -U bashcompinit && bashcompinit
-source /usr/local/etc/bash_completion.d/az
-source <(kubectl completion zsh)
+# autoload -U bashcompinit && bashcompinit
+# source /usr/local/etc/bash_completion.d/az
+# source <(kubectl completion zsh)
 
 # add syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Adding alias e to run emacsclient commant that opens file in already running emacs
 alias k=kubectl
 alias kctx=kubectx
 alias kns=kubens
@@ -101,11 +100,11 @@ alias kns=kubens
 USER_BASE_PATH=$(python -m site --user-base)
 export PATH=$PATH:$USER_BASE_PATH/bin
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export ANDROID_HOME=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
   PS1='$(kube_ps1)'$PS1
@@ -119,12 +118,21 @@ alias lt='exa --long --git --tree --level=2'
 # To bypass alias run: `\cat or `command cat`
 alias cat='bat'
 alias ping='prettyping --nolegend'
-alias preview='fzf --preview 'bat --color \"always\" {}''
+alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias top='sudo htop' # alias top and fix high sierra bug
 alias help='tldr'
+alias gdb='gb --merged | grep -v master | xargs git branch -D'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+export PATH="/usr/local/sbin:$PATH"
+export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --nocolor --hidden -g ""'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

@@ -52,7 +52,10 @@ brew install \
   repo \
   htop \
   prettyping \
-  the_silver_searcher
+  the_silver_searcher \
+  terraform \
+  watchman \
+  jq
 
 
 
@@ -91,7 +94,8 @@ brew cask install google-chrome \
   android-file-transfer \
   tunnelblick \
   brave-browser \
-  robo-3t 
+  robo-3t \
+  flux
   
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change

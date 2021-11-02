@@ -1,5 +1,6 @@
 [core]
-	excludesfile = /Users/maticko/.gitignore_global
+	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [user]
 	name = Matic Lesjak
 	email = matic.lesjak@gmail.com
@@ -9,12 +10,14 @@
 [alias]
 	up = "!git remote update -p; git merge --ff-only @{u}"
 	s = "checkout stable"
-        rbs = "pull --no-commit --rebase origin stable"
-        rbm = "pull --no-commit --rebase origin master"
+	rbm = "pull --no-commit --rebase origin master"
+	l="log  --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 [commit]
-	gpgsign = true
+	verbose = true
+	# gpgsign = true
 [diff]
 	tool = diff-so-fancy | less --tabs=1,5 -RFX
 	show = diff-so-fancy | less --tabs=1,5 -RFX
+	pager= diff-so-fancy | less --tabs=1,5 -RFX
 [color]
 	ui = auto
